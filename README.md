@@ -6,4 +6,4 @@ Ce repository contient des explications sur l'usage de python pour manipuler des
 
 - [DATAFRAME.md](./DATAFRAME.md) : Ce fichier explique comment manipuler des dataframes.
 - [PLOT.md](./PLOT.md) : Ce fichier décrit comment créer des graphiques et visualisations avec matplotlib et seaborn.
-- [NETWORKX.md](./PLOT.md) : Ce fichier décrit comment créer des grap avec Networkx.
+- [NETWORKX.md](./NETWORKX.md) : Ce fichier décrit comment créer des grap avec Networkx.

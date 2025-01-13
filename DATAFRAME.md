@@ -48,6 +48,11 @@ df = pd.read_json("fichier.json", lines=True)
 df = pd.read_json("fichier.jsonl", lines=True)
 ```
 
+### Lecture d’un fichier ZIP/CSV :
+```python
+df = pd.read_csv('fichier.csv.gz', compression='gzip')
+```
+
 ## Exploration d’un DataFrame
 
 ### Aperçu des premières lignes :
@@ -92,6 +97,17 @@ print(df.iloc[0])  # Première ligne
 ### Accès à une valeur spécifique :
 ```python
 print(df.at[0, 'Nom'])  # Ligne 0, colonne 'Nom'
+```
+
+### Accès à une columns après un groupby :
+```python
+# Few examples
+df.groupby(["TGT"]).SRC.count().mean()
+display(df.groupby(["YEA"]).TGT.nunique())
+tmp = df.groupby(["YEA", "TGT"]).VOT
+tmp_a = tmp.count().reset_index().groupby("YEA").VOT.count()
+tmp_b = df.groupby(["YEA"]).VOT.apply(lambda x: np.mean(x > 0))
+tmp_c = tmp.count().reset_index().groupby("YEA").VOT.mean()
 ```
 
 ---
@@ -151,6 +167,11 @@ df = df.fillna(0)  # Remplace les NaN par 0
 ---
 
 ## Opérations avancées
+
+### Unique value in columns:
+```python
+num_distinct_value_in_columns = df['columns'].nunique()
+```
 
 ### Groupement :
 ```python
