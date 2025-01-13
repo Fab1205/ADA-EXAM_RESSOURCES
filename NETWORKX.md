@@ -179,3 +179,12 @@ nx.draw(MDG, pos, with_labels=True, node_color='pink', node_size=500, font_size=
 plt.title("MultiDiGraph")
 plt.show()
 ```
+
+## 5. Autres opérations utiles
+
+### 5.1. Trier les edges par attributes et obtenir un subgraph avec ce tri :
+
+```python
+edges_2004 = [i for i, v in nx.get_edge_attributes(G, "YEA").items() if v == 2004]
+G_2004 = G.edge_subgraph(edges_2004)
+```
