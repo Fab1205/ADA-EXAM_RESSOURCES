@@ -1,4 +1,4 @@
-# Guide pour Travailler avec NetworkX et BiGraphMulti en Python
+# Guide pour Travailler avec NetworkX en python
 
 Ce guide vous apprendra à utiliser **NetworkX**, une bibliothèque Python puissante pour l'analyse et la visualisation de graphes. Nous allons également explorer **BiGraphMulti**, une structure de graphe biparti et multi-arêtes.
 
@@ -17,11 +17,11 @@ import matplotlib.pyplot as plt
 # Création d'un graphe
 G = nx.Graph()
 
-# Ajout de nœuds
+# Ajout de nœuds (un ou plusieurs)
 G.add_node(1)
 G.add_nodes_from([2, 3, 4])
 
-# Ajout d'arêtes
+# Ajout d'arêtes (un ou plusieurs)
 G.add_edge(1, 2)
 G.add_edges_from([(2, 3), (3, 4), (4, 1)])
 
