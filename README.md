@@ -166,6 +166,60 @@ merge = pd.merge(df1, df2, on='ID')
 print(merge)
 ```
 
+### Reindexation
+```python
+df = df.reindex([2, 0, 1])  # Réorganise les lignes
+```
+
+### Application de fonctions personnalisées
+```python
+df['Age carré'] = df['Age'].apply(lambda x: x**2)
+```
+
+---
+
+## Traitement de dates
+
+### Conversion en type datetime
+```python
+df['Date'] = pd.to_datetime(df['Date'])
+print(df['Date'].dt.year)
+```
+
+### Filtrage par date
+```python
+filtre = (df['Date'] > '2023-01-01') & (df['Date'] <= '2023-12-31')
+print(df[filtre])
+```
+
+---
+
+## Combinaisons et jointures
+
+### Concaténation
+```python
+df_concat = pd.concat([df1, df2], axis=0)  # Verticale
+```
+
+### Jointures avancées
+```python
+df_merge = pd.merge(df1, df2, on='ID', how='outer')
+```
+
+---
+
+## Tri et classement
+
+### Trier les valeurs
+```python
+df = df.sort_values(by='Age', ascending=False)
+```
+
+### Trier par index
+```python
+df = df.sort_index()
+```
+
 ---
 
 ## Sauvegarde d’un DataFrame
