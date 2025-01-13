@@ -22,7 +22,6 @@ data = {
     'Ville': ['Paris', 'Lyon', 'Marseille']
 }
 df = pd.DataFrame(data)
-print(df)
 ```
 
 ### A partir d’une liste de listes :
@@ -33,7 +32,6 @@ data = [
     ['Charlie', 35, 'Marseille']
 ]
 df = pd.DataFrame(data, columns=['Nom', 'Age', 'Ville'])
-print(df)
 ```
 
 ### Lecture d’un fichier CSV :
@@ -67,7 +65,7 @@ print(df.tail())
 
 ### Dimensions du DataFrame :
 ```python
-print(df.shape)  # (lignes, colonnes)
+print(df.shape)  # (lines, columns)
 ```
 
 ### Informations générales :
@@ -86,24 +84,24 @@ print(df.describe())
 
 ### Accès aux colonnes :
 ```python
-print(df['Nom'])  # Sélection d'une colonne
+print(df['Nom'])  # Select a column
 ```
 
 ### Accès à une ligne (par index) :
 ```python
-print(df.iloc[0])  # Première ligne
+print(df.iloc[0])  # First line
 ```
 
 ### Accès à une valeur spécifique :
 ```python
-print(df.at[0, 'Nom'])  # Ligne 0, colonne 'Nom'
+print(df.at[0, 'Nom'])  # Line 0, column 'Nom'
 ```
 
 ### Accès à une columns après un groupby :
 ```python
 # Few examples
 df.groupby(["TGT"]).SRC.count().mean()
-display(df.groupby(["YEA"]).TGT.nunique())
+df.groupby(["YEA"]).TGT.nunique() # Can be used with sum() or count() too
 tmp = df.groupby(["YEA", "TGT"]).VOT
 tmp_a = tmp.count().reset_index().groupby("YEA").VOT.count()
 tmp_b = df.groupby(["YEA"]).VOT.apply(lambda x: np.mean(x > 0))
@@ -123,25 +121,29 @@ print(df[filtre])
 ### Ajouter une colonne :
 ```python
 df['Score'] = [90, 85, 88]
-print(df)
+# OR
+df['fraction'] = df['number1'] / df['number2']
 ```
 
 ### Supprimer une colonne :
 ```python
 df = df.drop('Score', axis=1)
-print(df)
+# OR
+df.drop(columns=["col1", "col2", "col3"], , inplace=True)
+# OR
+df = df.drop(columns=["col1", "col2"])
 ```
 
 ### Supprimer des lignes :
 ```python
 df = df.drop(0)  # Supprime la première ligne
-print(df)
 ```
 
 ### Renommer les colonnes :
 ```python
 df = df.rename(columns={'Nom': 'Prénom'})
-print(df)
+# OR
+df.columns = ['col_name1', 'col_name2', 'col_name3', 'col_name4']
 ```
 
 ---
@@ -173,10 +175,19 @@ df = df.fillna(0)  # Remplace les NaN par 0
 num_distinct_value_in_columns = df['columns'].nunique()
 ```
 
+### Sum of the columns:
+```python
+sum_of_column_values = df['columns'].sum()
+```
+
+### Mean of the columns:
+```python
+mean_of_column_values = df['columns'].mean()
+```
+
 ### Groupement :
 ```python
 groupe = df.groupby('Ville')['Age'].mean()
-print(groupe)
 ```
 
 ### Fusion de DataFrames :
@@ -184,7 +195,6 @@ print(groupe)
 df1 = pd.DataFrame({'ID': [1, 2], 'Nom': ['Alice', 'Bob']})
 df2 = pd.DataFrame({'ID': [1, 2], 'Score': [90, 85]})
 merge = pd.merge(df1, df2, on='ID')
-print(merge)
 ```
 
 ### Reindexation
