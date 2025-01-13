@@ -218,3 +218,13 @@ axes[1].set_ylabel('Y2')
 plt.tight_layout()
 plt.show()
 ```
+
+### 3.3. Changer l'échelle des axes :
+
+Il faut utiliser :
+```python
+plt.xscale('linear')
+plt.yscale('linear')
+plt.xscale('log')
+plt.yscale('log')
+```

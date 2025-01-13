@@ -40,8 +40,19 @@ NetworkX offre des outils pour accéder aux propriétés du graphe :
 print("Nœuds :", G.nodes())
 print("Arêtes :", G.edges())
 
+# Nombre de nœuds et arêtes
+print("Nœuds :", len(G.nodes()))
+print("Arêtes :", len(G.edges()))
+
 # Degré d'un nœud
 print("Degré du nœud 1 :", G.degree[1])
+
+# Degré de tout les nœud
+degree = list(dict(G.degree()).values())
+
+# Degré de tout les nœud (entrant et sortant) (si graph directionnel !)
+out_degree = list(dict(G.out_degree()).values())
+in_degree = list(dict(G.in_degree()).values())
 ```
 
 ---
