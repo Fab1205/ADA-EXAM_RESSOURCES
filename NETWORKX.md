@@ -4,14 +4,6 @@ Ce guide vous apprendra à utiliser **NetworkX**, une bibliothèque Python puiss
 
 ---
 
-## Prérequis
-
-Avant de commencer, assurez-vous d'avoir Python installé sur votre machine, ainsi que les bibliothèques **NetworkX** et **Matplotlib**. Vous pouvez les installer via `pip` :
-
-```bash
-pip install networkx matplotlib
-```
-
 ## 1. Introduction à NetworkX
 
 ### 1.1. Création d'un Graphe Simple
