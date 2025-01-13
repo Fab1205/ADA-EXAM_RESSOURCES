@@ -189,7 +189,21 @@ edges_2004 = [i for i, v in nx.get_edge_attributes(G, "YEA").items() if v == 200
 G_2004 = G.edge_subgraph(edges_2004)
 ```
 
-### 5.1. Trier les edges par attributes et obtenir un subgraph avec ce tri :
+### 5.2. Get l'attributes d'une node ou d'un edge :
 ```python
-edge = nx.get_edge_attributes(G.subgraph(triangle), "VOT")
+color = nx.get_node_attributes(G, "color")
+>>> color[4]
+color=nx.get_edge_attributes(G,'color')
+>>> color[(1,2)]
+```
+
+### 5.3. Get les attributes de tout les edges d'un graph ou subgraph.
+```python
+edge_attr = nx.get_edge_attributes(G.subgraph(node_list), "attribute")
+```
+
+### 5.4. Check si un edge existe :
+```python
+G.has_edge(0, 1)  # using two nodes
+>>> True
 ```
