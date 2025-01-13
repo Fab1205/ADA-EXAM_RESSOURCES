@@ -41,7 +41,11 @@ print(df)
 df = pd.read_csv('fichier.csv')
 ```
 
----
+### Lecture d’un fichier JSON :
+```python
+df = pd.read_json("fichier.json", lines=True)
+```
+***.jsonl if the file is "fichier.jsonl"***
 
 ## Exploration d’un DataFrame
 
