@@ -1,16 +1,8 @@
 # Guide pour Créer des Graphiques en Python avec Matplotlib
 
-Ce guide vous présentera les bases de la création de graphiques en Python en utilisant la bibliothèque populaire **Matplotlib**. Vous apprendrez comment visualiser vos données stockées dans des DataFrames et créer divers types de graphiques.
+Ce guide présente les bases de la création de graphiques en Python en utilisant la bibliothèque populaire **Matplotlib**.
 
 ---
-
-## Prérequis
-
-Avant de commencer, assurez-vous d'avoir Python installé sur votre machine, ainsi que la bibliothèque **Matplotlib**. Vous pouvez l'installer en utilisant `pip` :
-
-```bash
-pip install matplotlib
-```
 
 ## 1. Introduction à Matplotlib avec des DataFrames
 
@@ -226,12 +218,3 @@ axes[1].set_ylabel('Y2')
 plt.tight_layout()
 plt.show()
 ```
-
----
-
-## 4. Conclusion
-
-Matplotlib est un outil puissant et polyvalent pour visualiser vos données, en particulier lorsqu'elles sont stockées dans des DataFrames. En utilisant divers types de graphiques et des fonctionnalités avancées comme les subplots et le redimensionnement, vous pouvez représenter vos données de manière claire et adaptée à vos besoins. 
-
-Pour plus de détails, explorez la [documentation officielle de Matplotlib](https://matplotlib.org/stable/contents.html). Avec ces bases, vous êtes prêts à créer des visualisations impactantes !
-
