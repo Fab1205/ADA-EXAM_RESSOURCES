@@ -202,7 +202,13 @@ color=nx.get_edge_attributes(G,'color')
 edge_attr = nx.get_edge_attributes(G.subgraph(node_list), "attribute")
 ```
 
-### 5.4. Check si un edge existe :
+### 5.4. Set un attribute à un edge :
+```python
+nx.set_edge_attributes(G, dict(df.set_index(["node1", "node2"]).COL_NAME), "ATTR_NAME")
+# dict(df.set_index(["node1", "node2"]).COL_NAME) could differ but need to be of the form :
+# {(node1, node2): attr12, (node3, node4): attr34 , ...}
+```
+### 5.5. Check si un edge existe :
 ```python
 G.has_edge(0, 1)  # using two nodes
 >>> True
