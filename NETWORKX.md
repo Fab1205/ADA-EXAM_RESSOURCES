@@ -55,6 +55,21 @@ out_degree = list(dict(G.out_degree()).values())
 in_degree = list(dict(G.in_degree()).values())
 ```
 
+### 1.3. Graph à partir de DataFrames
+
+```python
+G = nx.from_pandas_edgelist(edge_df, source='node1', target='node2', edge_attr='attr', create_using=nx.DiGraph())
+```
+
+```python
+G = nx.DiGraph()
+
+for _, row in node_df.iterrows():
+    G.add_node(row['node1'], score=row['attr1'], name=row['attr2'])
+
+for _, row in edge_df.iterrows():
+    G.add_edge(row['node1'], row['node2'], gender=row['attr'])
+```
 ---
 
 ## 2. Différents Types de Graphes avec NetworkX
