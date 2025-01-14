@@ -70,6 +70,12 @@ for _, row in node_df.iterrows():
 for _, row in edge_df.iterrows():
     G.add_edge(row['node1'], row['node2'], gender=row['attr'])
 ```
+
+### 1.4. Iterate sur toutes les nodes du graph
+```python
+for node in G.nodes:
+    continue
+```
 ---
 
 ## 2. Différents Types de Graphes avec NetworkX
