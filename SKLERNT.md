@@ -98,6 +98,8 @@ accuracy = accuracy_score(y_test, predictions)
 print(f"Précision du modèle : {accuracy * 100:.2f}%")
 ```
 
+Il est aussi possible d'utiliser d'autre mesures comme le ```roc_auc_score``` ou le ```f1_score```.
+
 ---
 
 ## Utilisation d'un `TfidfVectorizer` (pour les données textuelles)
