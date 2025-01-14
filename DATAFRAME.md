@@ -112,6 +112,13 @@ tmp_c = tmp.count().reset_index().groupby("YEA").VOT.mean()
 
 ## Manipulation des données
 
+### Changer le type d'une colonne (bool to int par exemple) :
+```python
+full_df["int"] = full_df["bool"].astype(int)
+# OR
+full_df["int1"] = (full_df["int2"] == 1).values.astype(int) # Here (...) is a bool column
+```
+
 ### Filtrer les lignes :
 ```python
 filtre = df['Age'] > 30
